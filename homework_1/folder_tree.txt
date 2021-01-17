@@ -1,0 +1,22 @@
+##utworz strukture katalogow
+
+mkdir -p holidays/pictures/barcelona holidays/pictures/madrid/palace holidays/maps/local holidays/information/notes holidays/information/tips
+
+##zmien nazwe folderu barcelona na valencia
+
+mv barcelona valencia
+
+##usun folder information  
+
+rm -r information
+
+##bedac w folderze pictures dodaj folder barcelona do folderu maps
+
+mv barcelona ~/python_infoshare/python_szkolenie/homework_1/holidays/maps/
+
+##bedac w folderze maps wyswietl zawartosc folderu madrid
+
+ls ~/python_infoshare/python_szkolenie/homework_1/holidays/pictures/madrid/
+
+
+
