@@ -6,6 +6,6 @@ while True:
         break
 
 for num in range(height):
-    print(" " * (height - num) + "#" * num)
+    print(" " * (height - num) + "#" * (num - 1)
 
 #nie wiem jak sie pozbyc pierwszej linii ktora wyswietal tylko spacje
