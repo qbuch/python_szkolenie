@@ -10,7 +10,7 @@ if human_age == 1:
     print(10.5)
 elif human_age == 2:
     print(21)
-else: human_age >= 3
+elif human_age >= 3:
 print("Twoj wiek w psich latach to " + str(((human_age - 2) * 4) + 21))
 
 
