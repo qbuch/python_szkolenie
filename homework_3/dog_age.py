@@ -11,3 +11,8 @@ elif human_age == 2:
     print(21)
 elif human_age >= 3:
     print("Twoj wiek w psich latach to " + str(((human_age - 2) * 4) + 21))
+
+
+###################
+
+
