@@ -6,6 +6,12 @@ while True:
         break
 
 for num in range(height):
-    print(" " * (height - num) + "#" * (num - 1)
+    print(" " * (height - num) + "#")
 
 #nie wiem jak sie pozbyc pierwszej linii ktora wyswietal tylko spacje
+
+# floor = int(input("Podaj liczbe pieter: "))
+# for i in range(0, floor):
+#     for i in range(0, i + 1):
+#         print(end="#")
+#     print()
