@@ -8,5 +8,4 @@ while True:
 for num in range(height):
     print(" " * (height - num - 1) + "#" * (height + num - 3))
 
-#nie wiem jak sie pozbyc pierwszej linii ktora wyswietal tylko spacje
 
