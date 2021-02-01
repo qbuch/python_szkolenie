@@ -33,8 +33,8 @@ elif len(user_pass) < 8:
 elif len(user_pass) > 64:
     print('ERROR. Your password is too long.')
 
-def digit_check(user_pass):
-    no_digit = 0
+# def digit_check(user_pass):
+no_digit = 0
 for char in user_pass:
     if char.isdigit:
         no_digit += 1
@@ -43,8 +43,8 @@ if no_digit > 0:
 else:
     print('ERROR. Your password doesn`t include any digits.')
 
-def special_char(user_pass):
-    special = any(not char.isalnum() for char in user_pass)
+# def special_char(user_pass):
+special = any(not char.isalnum() for char in user_pass)
 if special:
     print('ERROR. There is at least one unacceptable character in your password')
 else:
