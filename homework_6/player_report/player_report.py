@@ -21,11 +21,13 @@ print("4. Average player score")
 print("5. The biggest score")
 print("6. The lowest score")
 print("7. The oldest player")
+print("8. The youngest player")
 
 choice = int(input('Please enter number: '))
 while True:
-    if choice < 1 and choice > 7:
-        print('Please, enter correct number')
+    if choice < 1 and choice > 8:
+        print('Please, enter correct number') #program nie informuje o ponownym wprowadzeniu wartosci po wpisaniu liczby spoza zakresu
+        break
     elif choice == 1:
         print('Top 3 player scores are: \n', dataframe.nlargest(3, 'score'))
         break
@@ -52,6 +54,10 @@ while True:
     elif choice == 7:
         oldest = dataframe['age'].max()
         print('The oldest player is: ', oldest, ' years old.')
+        break
+    elif choice == 8:
+        youngest = dataframe['age'].min()
+        print('The youngest player is: ', youngest, ' years old.')
         break
     else:
         break
