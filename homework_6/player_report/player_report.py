@@ -6,58 +6,40 @@
 # e.Maksymalna ilość punktów
 # f.Minimalna ilość punktów
 # g.Najstarszy gracz
+# h.Najmloszy gracz
+
+import csv
+from collections import counter
+
+def data_load(filename='players.csv'):
+    with open(filename, 'r') as f:
+        reader = csv.DictReader(f, delimiter=',')
+        return (list(reader))
+# print(data_load())
+
+#top 3 players
+
+def sorted_by_score(players, column_name='score'):
+    players.sort(key=lambda player: player['score'], reverse=True)
+    players_sorted_by_score = sorted(players, key=lambda player: player[column_name], reverse=True)
+    return players_sorted_by_score
+print(sorted_by_score())
+
+def get_averages(players, column_name='age'):
+    total = 0
+    for player in players:
+        total += int(player[column_name])
+
+    return total / len(players)
 
 
-import pandas as pd
-
-filename = 'players.csv'
-dataframe = pd.read_csv(filename)
-
-print("What would like to check from your data?:")
-print("1. Top 3 player scores")
-print("2. Average age of players")
-print("3. Most common name among players")
-print("4. Average player score")
-print("5. The biggest score")
-print("6. The lowest score")
-print("7. The oldest player")
-print("8. The youngest player")
-
-choice = int(input('Please enter number: '))
-while True:
-    if choice < 1 and choice > 8:
-        print('Please, enter correct number') #program nie informuje o ponownym wprowadzeniu wartosci po wpisaniu liczby spoza zakresu
-        break
-    elif choice == 1:
-        print('Top 3 player scores are: \n', dataframe.nlargest(3, 'score'))
-        break
-    elif choice == 2:
-        print('Average players age is', dataframe['age'].mean(), 'years.' )
-        break
-    elif choice == 3:
-        separate_col = dataframe['name'].str.split(' ',n=1,expand=True)
-        most_frequent = separate_col[0].value_counts().idxmax()
-        print('Most common name among players is: ', most_frequent,) #w danych jest kilka imion, ktore wystepuja taka sama ilosc razy. Program losowo wypisuje imiona. Nalezy zawezic do kilku rekordow.
-        break
-    elif choice == 4:
-        avg_score = dataframe['score'].mean()
-        print('Average player score is ', avg_score, ' points.')
-        break
-    elif choice == 5:
-        top_score = dataframe['score'].max()
-        print('The biggest player score is: ', top_score, ' points.')
-        break
-    elif choice == 6:
-        lowest_score = dataframe['score'].min()
-        print('The lowest score is: ', lowest_score, ' points.')
-        break
-    elif choice == 7:
-        oldest = dataframe['age'].max()
-        print('The oldest player is: ', oldest, ' years old.')
-        break
-    elif choice == 8:
-        youngest = dataframe['age'].min()
-        print('The youngest player is: ', youngest, ' years old.')
-        break
-    else:
-        break
+def get_most_common_name(players):
+    names = []
+    for player in players:
+        full_name = player['name']
+        # ['imie', 'nazwisko']
+        firstname = full_name.split(' ')[0]
+        names.append(firstname)
+    names_counter = Counter(names)
+    names_sorted = names_counter.most_common()
+    return names_sorted
