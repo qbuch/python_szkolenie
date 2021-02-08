@@ -4,7 +4,7 @@ filename  = 'words.txt'
 
 with open('words.txt') as f:
     for line in f:
-        if str(filename) == str(filename)[::-1]:
+        if str(line) == str(line)[::-1]:
             print("It`s a palindrome")
         else:
             print('It`s not a palindrome')
