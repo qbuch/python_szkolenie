@@ -1,7 +1,7 @@
 # Napisz program który wprowadzony przez użytkownika tekst zakodje wg szyfru cezara
 #* dodaj funkcjonalność dekodowania zaszyfrowanej wiadomości.
 
-pass_to_encrypt = (input('Enter a string you would like to encrypt: ')).lower()
+pass_to_encrypt = (input('Enter a string you would like to encrypt: ')) #.lower()
 def encrypt_password():
     char_list = list(pass_to_encrypt)
     change_char_ascii = [ord(i) for i in char_list]
