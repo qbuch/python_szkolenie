@@ -15,7 +15,7 @@ def data_load(filename='players.csv'):
     with open(filename, 'r') as f:
         reader = csv.DictReader(f, delimiter=',')
         return (list(reader))
-# print(data_load())
+print(data_load())
 
 #top 3 players
 
